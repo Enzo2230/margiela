@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>THE AFTER-IMAGE — An archive of what remains</title>
+  <meta name="description" content="Archive numérique expérimentale construite autour des 76 looks du défilé Maison Margiela Automne-Hiver 2026. Projet de portfolio non officiel.">
+  <meta name="theme-color" content="#E9E6DF">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/looks/look-01-l.webp" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="src/styles/tokens.css">
+  <link rel="stylesheet" href="src/styles/base.css">
+  <link rel="stylesheet" href="src/styles/hud.css">
+  <link rel="stylesheet" href="src/styles/opening.css">
+  <link rel="stylesheet" href="src/styles/runway.css">
+  <link rel="stylesheet" href="src/styles/viewer.css">
+  <link rel="stylesheet" href="src/styles/room.css">
+  <link rel="stylesheet" href="src/styles/material.css">
+  <link rel="stylesheet" href="src/styles/anatomy.css">
+  <link rel="stylesheet" href="src/styles/trace.css">
+  <script defer src="src/data/looks.js"></script>
+  <script defer src="src/data/notes.js"></script>
+  <script defer src="src/data/look30.js"></script>
+  <script defer src="src/utils/dom.js"></script>
+  <script defer src="src/utils/motion.js"></script>
+  <script defer src="src/utils/images.js"></script>
+  <script defer src="src/utils/trace.js"></script>
+  <script defer src="src/components/sound.js"></script>
+  <script defer src="src/components/hud.js"></script>
+  <script defer src="src/components/viewer.js"></script>
+  <script defer src="src/components/room30.js"></script>
+  <script defer src="src/chapters/opening.js"></script>
+  <script defer src="src/chapters/runway.js"></script>
+  <script defer src="src/chapters/material.js"></script>
+  <script defer src="src/chapters/anatomy.js"></script>
+  <script defer src="src/chapters/trace.js"></script>
+  <script defer src="src/main.js"></script>
+</head>
+<body data-chapter="object">
+  <a class="skip-link" href="#runway">Aller directement à l'archive des 76 looks</a>
+  <div id="live" class="visually-hidden" aria-live="polite"></div>
+
+  <!-- ============================================================ HUD -->
+  <header class="hud">
+    <a class="hud__mark mono" href="#object"><span>MMXXVI</span> / <i class="hud__long">DIGITAL FASHION </i>ARCHIVE</a>
+    <p class="hud__object mono" aria-label="Objet en cours">OBJECT Nº <span data-hud-object>001</span></p>
+
+    <nav class="hud__rail" aria-label="Chapitres">
+      <ol>
+        <li><a href="#object" data-chapter-link="object"><b>00</b><span>The Object</span></a></li>
+        <li><a href="#runway" data-chapter-link="runway"><b>I</b><span>The Runway</span></a></li>
+        <li><a href="#material" data-chapter-link="material"><b>II</b><span>Material Memory</span></a></li>
+        <li><a href="#anatomy" data-chapter-link="anatomy"><b>III</b><span>Anatomy</span></a></li>
+        <li><a href="#trace" data-chapter-link="trace"><b>IV</b><span>The Trace</span></a></li>
+      </ol>
+      <div class="hud__progress" aria-hidden="true"><span data-progress></span></div>
+    </nav>
+
+    <div class="hud__tools">
+      <button class="hud__btn mono" type="button" data-open-index aria-haspopup="dialog">Index</button>
+      <button class="hud__btn mono" type="button" data-open-archive>Archive&nbsp;76</button>
+      <button class="hud__btn mono" type="button" data-sound-toggle aria-pressed="false">Son&nbsp;<span data-sound-label>off</span></button>
+      <label class="hud__vol" data-sound-volume-wrap>
+        <span class="visually-hidden">Volume</span>
+        <input type="range" min="0" max="100" value="50" data-sound-volume hidden>
+      </label>
+    </div>
+
+    <p class="hud__mobile-chapter mono" aria-hidden="true" data-mobile-chapter>00 — The Object</p>
+  </header>
+
+  <main>
+    <!-- ======================================================== 00 · THE OBJECT -->
+    <section id="object" class="opening" data-chapter-section="object" data-object="001" aria-labelledby="opening-title">
+      <div class="opening__stage" data-opening-stage>
+        <div class="opening__ghost" aria-hidden="true" data-opening-ghost></div>
+        <figure class="opening__figure" data-opening-figure>
+          <img class="opening__img" src="assets/looks/look-01-l.webp" width="1080" height="1440" fetchpriority="high"
+               alt="Look 1 : robe longue blanche drapée, visage voilé, sur une piste de béton bordée de conteneurs.">
+          <img class="opening__negative" src="assets/looks/look-01-l.webp" width="1080" height="1440" alt="" aria-hidden="true" data-opening-negative>
+        </figure>
+        <div class="opening__texture" aria-hidden="true" data-opening-texture></div>
+      </div>
+
+      <div class="opening__type">
+        <h1 id="opening-title" class="opening__title" data-split-title aria-label="The After-Image">THE AFTER-IMAGE</h1>
+        <p class="opening__sig mono">AN ARCHIVE OF WHAT REMAINS.</p>
+      </div>
+
+      <p class="opening__caption mono">
+        <span class="red">Nº 001</span> — img/Look_1.jpg<br>
+        <span class="opening__hint">Survolez : l'image rémanente apparaît en négatif.</span>
+      </p>
+      <img class="opening__label" src="assets/logo/label-ink.png" width="426" height="252" alt="Maison Margiela Paris — étiquette aux chiffres 0 à 23">
+      <a class="opening__enter mono" href="#runway" data-enter>ENTER THE ARCHIVE <span aria-hidden="true">↗</span></a>
+
+      <div class="intro" data-intro hidden>
+        <p class="intro__count mono" aria-hidden="true"><span data-intro-count>001</span> / 076</p>
+        <span class="intro__rule" aria-hidden="true"></span>
+        <p class="intro__line mono" aria-hidden="true">76 silhouettes — 1 archive — what remains</p>
+        <button class="intro__skip mono" type="button" data-skip-intro>Passer l'introduction</button>
+      </div>
+    </section>
+
+    <!-- ======================================================== I · THE RUNWAY -->
+    <section id="runway" class="runway" data-chapter-section="runway" aria-labelledby="runway-title">
+      <header class="chapter-head">
+        <p class="chapter-head__no mono">Chapitre I</p>
+        <h2 id="runway-title" class="chapter-head__title">The<br><em>Runway</em></h2>
+        <div class="chapter-head__lede">
+          <p>Soixante-seize passages, conservés dans leur ordre. Chaque photographie garde son numéro et son fichier source. Les planches ci-dessous recomposent la série comme un magazine déconstruit.</p>
+          <p class="mono small">Source : img/Look_1.jpg → img/Look_76.jpg · 76 / 76 fichiers présents</p>
+        </div>
+        <div class="runway__modes" role="group" aria-label="Mode de consultation">
+          <button type="button" class="chip mono" data-mode="editorial" aria-pressed="true">Planches</button>
+          <button type="button" class="chip mono" data-mode="index" aria-pressed="false">Index 1—76</button>
+        </div>
+      </header>
+
+      <div class="runway__counter mono" aria-hidden="true" data-runway-counter>
+        <span>Nº <b data-runway-current>01</b> / 76</span>
+        <span class="runway__bar"><i data-runway-bar></i></span>
+      </div>
+
+      <div class="runway__editorial" data-runway-editorial></div>
+
+      <div class="runway__index" data-runway-index hidden>
+        <div class="index-tools" role="group" aria-label="Ordre de l'index">
+          <button type="button" class="chip mono" data-sort="sequence" aria-pressed="true">Ordre de passage</button>
+          <button type="button" class="chip mono" data-sort="tone" aria-pressed="false">Du plus clair au plus sombre</button>
+          <p class="mono small index-tools__note">Valeur mesurée automatiquement sur les pixels de la zone centrale de chaque photographie.</p>
+        </div>
+        <ol class="index-grid" data-index-grid aria-label="Index des 76 looks"></ol>
+        <figure class="index-preview" data-index-preview aria-hidden="true">
+          <img alt="" data-index-preview-img>
+          <figcaption class="mono" data-index-preview-cap></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ======================================================== II · MATERIAL MEMORY -->
+    <section id="material" class="material" data-chapter-section="material" data-object="M.01" aria-labelledby="material-title">
+      <header class="chapter-head chapter-head--dark">
+        <p class="chapter-head__no mono">Chapitre II</p>
+        <h2 id="material-title" class="chapter-head__title">Material<br><em>Memory</em></h2>
+        <div class="chapter-head__lede">
+          <p>Une table de travail. Des fragments prélevés dans les photographies du défilé et des matières fabriquées pour cette archive se superposent. Déplacez-les, soulevez-les, frottez la feuille pour retrouver l'image dessous.</p>
+          <p class="mono small">Fragments : recadrages des fichiers img/Look_N.jpg · Textures : générées procéduralement pour ce projet</p>
+        </div>
+      </header>
+
+      <div class="material__controls" role="group" aria-label="Commandes de l'installation">
+        <button type="button" class="chip mono" data-mat-explode aria-pressed="false">Déconstruire</button>
+        <button type="button" class="chip mono" data-mat-reset>Réinitialiser</button>
+        <span class="material__sep mono" aria-hidden="true">/</span>
+        <span class="mono small" id="under-label">Sous-couche&nbsp;:</span>
+        <div class="material__under" role="group" aria-labelledby="under-label" data-mat-under></div>
+      </div>
+
+      <div class="material__stage" data-mat-stage>
+        <p class="material__hint mono" data-mat-hint>Glisser : déplacer · Cliquer : soulever · Frotter la feuille : révéler · Flèches : déplacer au clavier</p>
+      </div>
+      <ol class="material__legend mono" data-mat-legend aria-label="Légende des couches"></ol>
+    </section>
+
+    <!-- ======================================================== III · ANATOMY -->
+    <section id="anatomy" class="anatomy" data-chapter-section="anatomy" data-object="030" aria-labelledby="anatomy-title">
+      <header class="chapter-head">
+        <p class="chapter-head__no mono">Chapitre III</p>
+        <h2 id="anatomy-title" class="chapter-head__title">Anatomy of<br>a <em>Silhouette</em></h2>
+        <div class="chapter-head__lede">
+          <p>Une planche d'étude consacrée à une seule silhouette — le Look 30, pièce centrale de l'archive. De la vue d'ensemble au détail, chaque étape sépare ce que l'on voit (<span class="mono small">OBSERVATION</span>) de ce que l'on en pense (<em>interprétation</em>).</p>
+        </div>
+      </header>
+      <div class="anatomy__body" data-anatomy></div>
+    </section>
+
+    <!-- ======================================================== IV · THE TRACE -->
+    <section id="trace" class="trace" data-chapter-section="trace" data-object="R.00" aria-labelledby="trace-title">
+      <header class="chapter-head chapter-head--dark">
+        <p class="chapter-head__no mono">Chapitre IV</p>
+        <h2 id="trace-title" class="chapter-head__title">The<br><em>Trace</em></h2>
+        <div class="chapter-head__lede">
+          <p>Votre parcours a laissé une trace : les looks consultés sont entourés, comme sur une étiquette. Composez à partir d'elle une relique — une affiche unique — puis exportez-la.</p>
+          <p class="mono small">Les looks ouverts dans l'archive s'ajoutent automatiquement à votre trace.</p>
+        </div>
+      </header>
+      <div class="trace__body" data-trace></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img class="footer__logo" src="assets/logo/wordmark-paper.png" width="651" height="145" alt="Maison Margiela Paris">
+    <div class="footer__cols">
+      <p class="mono small">THE AFTER-IMAGE — AN ARCHIVE OF WHAT REMAINS.<br>Projet de portfolio non officiel, sans lien avec la maison.</p>
+      <p class="mono small">Photographies : défilé Maison Margiela Automne-Hiver 2026, 76 fichiers fournis (img/Look_1 → Look_76).<br>Textures, sons et compositions : créés pour ce projet.</p>
+      <p class="mono small">Caractères : Instrument Serif, Instrument Sans, IBM Plex Mono (SIL OFL).</p>
+    </div>
+    <a class="footer__top mono" href="#object">↑ Revenir à l'objet Nº 001</a>
+  </footer>
+
+  <!-- ======================================================== DIALOGS -->
+  <dialog class="chapters" data-chapters aria-labelledby="chapters-title">
+    <div class="chapters__inner">
+      <div class="chapters__top">
+        <h2 id="chapters-title" class="mono">Index des chapitres</h2>
+        <button type="button" class="hud__btn mono" data-close>Fermer <span aria-hidden="true">×</span></button>
+      </div>
+      <ol class="chapters__list">
+        <li><a href="#object" data-goto><span class="mono">00</span>The Object</a></li>
+        <li><a href="#runway" data-goto><span class="mono">I</span>The Runway</a></li>
+        <li><a href="#runway" data-goto data-goto-index><span class="mono">I·A</span>Index des 76 looks</a></li>
+        <li><a href="#runway" data-goto data-goto-room><span class="mono">Nº30</span>Salle 30 — pièce centrale</a></li>
+        <li><a href="#material" data-goto><span class="mono">II</span>Material Memory</a></li>
+        <li><a href="#anatomy" data-goto><span class="mono">III</span>Anatomy of a Silhouette</a></li>
+        <li><a href="#trace" data-goto><span class="mono">IV</span>The Trace</a></li>
+      </ol>
+    </div>
+  </dialog>
+
+  <dialog class="viewer" data-viewer aria-label="Fiche du look"></dialog>
+  <dialog class="room" data-room aria-label="Salle 30 — pièce centrale"></dialog>
+
+  <noscript>
+    <p class="noscript mono">Cette archive utilise JavaScript pour composer les planches. Les 76 photographies restent consultables dans le dossier img/.</p>
+  </noscript>
+</body>
+</html>

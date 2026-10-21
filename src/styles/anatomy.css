@@ -1,0 +1,82 @@
+.anatomy {
+  background:
+    linear-gradient(to right, rgba(21,21,21,.06) 1px, transparent 1px) 0 0 / calc(100% / 12) 100%,
+    var(--paper);
+  padding-bottom: 12vh;
+}
+.anatomy__body {
+  display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--gutter);
+  padding: 0 var(--gutter);
+}
+.ana-sticky { position: sticky; top: calc(var(--hud) + 2vh); height: calc(100svh - var(--hud) - 6vh); display: grid; grid-template-rows: minmax(0, 1fr) auto; justify-items: center; gap: 10px; }
+.ana-frame { position: relative; height: 100%; aspect-ratio: 3 / 4; max-width: 100%; }
+.ana-plate {
+  position: absolute; inset: 0; overflow: hidden; transform-origin: 0 0;
+  transition: transform 1.2s cubic-bezier(.7,0,.2,1);
+  background: var(--paper-deep);
+}
+.ana-window { position: absolute; inset: 0; overflow: hidden; }
+.ana-frame::before { content: ""; position: absolute; inset: 0; outline: 1px solid var(--ink); outline-offset: 10px; pointer-events: none; z-index: 3; }
+.ana-img { width: 100%; height: 100%; object-fit: cover; transition: filter .9s var(--ease); }
+.is-graphic .ana-img { filter: grayscale(1) contrast(1.15) brightness(1.08); }
+.ana-graphic { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity .9s var(--ease); pointer-events: none; }
+.is-graphic .ana-graphic { opacity: 1; }
+.ana-graphic line { stroke: var(--red); stroke-width: 2; }
+.ana-graphic line.axis { stroke-dasharray: 2 10; stroke-width: 2; }
+.ana-graphic line.dash { stroke-dasharray: 14 8; }
+.ana-graphic .contour { fill: rgba(141, 32, 38, .16); stroke: var(--red); stroke-width: 2.5; mix-blend-mode: multiply; }
+.ana-graphic .halo { fill: none; stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 3 6; }
+.ana-graphic text { font: 24px var(--mono); fill: var(--ink); letter-spacing: .04em; text-transform: uppercase; paint-order: stroke; stroke: var(--paper); stroke-width: 6px; }
+
+
+.ana-ruler { position: absolute; left: -46px; top: 0; bottom: 0; width: 40px; color: var(--brown); pointer-events: none; }
+.ana-ruler span { position: absolute; right: 0; transform: translateY(-50%); font-size: 9px; }
+.ana-ruler span::after { content: ""; display: inline-block; width: 6px; height: 1px; background: currentColor; margin-left: 4px; vertical-align: middle; }
+.ana-corner { position: absolute; width: 26px; height: 26px; border: 0 solid var(--red); z-index: 4; pointer-events: none; }
+.ana-corner.tl { left: 0; top: 0; border-left-width: 2px; border-top-width: 2px; }
+.ana-corner.br { right: 0; bottom: 0; border-right-width: 2px; border-bottom-width: 2px; }
+.ana-status { color: var(--brown); text-align: center; }
+
+.ana-marks { position: absolute; inset: 0; }
+.ana-mark {
+  position: absolute; transform: translate(-50%, -50%);
+  padding: 3px 6px 2px; background: var(--paper); color: var(--red); border: 1px solid var(--red);
+  opacity: 0; transition: opacity .35s var(--ease), background .2s, color .2s;
+}
+.ana-mark span { font-size: 9.5px; }
+.ana-plate:hover .ana-mark, .ana-mark:focus-visible, .ana-mark[aria-expanded="true"] { opacity: 1; }
+.ana-mark:hover, .ana-mark[aria-expanded="true"] { background: var(--red); color: var(--paper); }
+.is-cropped .ana-mark, .is-graphic .ana-mark { opacity: 0 !important; pointer-events: none; }
+@media (hover: none) { .ana-mark { opacity: 1; } }
+
+.ana-pop {
+  position: absolute; left: calc(100% + 18px); width: min(300px, 34vw); z-index: 6;
+  background: var(--ink); color: var(--paper); padding: 12px; display: grid; gap: 8px;
+  box-shadow: 0 24px 50px rgba(21,21,21,.3);
+}
+.ana-pop.left { left: auto; right: calc(100% + 18px); }
+.ana-pop[hidden] { display: none; }
+.ana-pop__crop { width: 100%; background-repeat: no-repeat; max-height: 200px; }
+.ana-pop__obs { font-size: 14px; }
+.ana-pop__int { font: italic 400 19px/1.15 var(--serif); color: var(--dust); }
+.ana-pop .link-btn { justify-self: start; }
+
+.ana-steps { display: grid; padding-top: 14vh; }
+.ana-step { min-height: 78svh; padding: 4vh 0 10vh; display: grid; gap: 16px; align-content: start; opacity: .35; transition: opacity .6s var(--ease); border-top: 1px solid var(--line-paper); }
+.ana-step.is-active { opacity: 1; }
+.ana-step h3 { font: 400 clamp(40px, 4.4vw, 78px)/.92 var(--serif); letter-spacing: -.03em; }
+.ana-obs, .ana-int { display: grid; gap: 4px; max-width: 42ch; }
+.ana-obs .mono, .ana-int .mono { color: var(--brown); }
+.ana-int p:not(.mono) { font: italic 400 clamp(22px, 1.8vw, 30px)/1.12 var(--serif); }
+.ana-step .cta { margin-top: 10px; }
+
+@media (max-width: 900px) {
+  .anatomy { background: var(--paper); }
+  .anatomy__body { grid-template-columns: 1fr; }
+  .ana-sticky { top: calc(var(--hud) + 4px); height: 54svh; z-index: 2; background: var(--paper); padding-bottom: 6px; }
+  .ana-ruler { display: none; }
+  .ana-pop { left: 4%; right: 4%; width: auto; top: auto !important; bottom: 4%; }
+  .ana-pop.left { left: 4%; right: 4%; }
+  .ana-steps { padding-top: 4vh; }
+  .ana-step { min-height: 62svh; }
+}
